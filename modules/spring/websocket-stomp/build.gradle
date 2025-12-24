@@ -1,19 +1,11 @@
 plugins {
-    id 'java'
-}
-
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-
-repositories {
-    mavenCentral()
+    id 'org.springframework.boot'
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-}
-
-test {
-    useJUnitPlatform()
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // Jakarta WebSocket API (순수 Java WebSocket)
+    implementation 'jakarta.websocket:jakarta.websocket-api:2.1.0'
+    // ServerEndpointExporter를 사용하기 위해 필요 (STOMP 사용 안 함, 순수 Jakarta WebSocket만 사용)
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
 }
